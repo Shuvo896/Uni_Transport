@@ -39,19 +39,21 @@ body{
 }
 .sidebar{
     position: fixed;
-    top: 30px;
-    left: 30px;
-    bottom: 30px;
+    top: 15px;
+    left: 15px;
+    bottom: 15px;
     /* height: 100%; */
     width: 225px;
     padding: 10px 14px;
     border-radius: 10px;
-    background-image: linear-gradient(25deg,#2b2b2b 80% ,#4F4F4F );
+    background-image: 
+    linear-gradient(20deg,rgb(32, 32, 37) 30% ,rgb(62, 62, 71) );
 }
 
 .sidebar .img-text img {
     height: 63px;
     width: auto;
+    padding-top: 20px;
 }
 
 .sidebar.img-text {
@@ -62,6 +64,34 @@ body{
 .header_title {
     color: white;
     font-size: 20px;
+}
+
+.nav_button {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 100px;
+    padding-left: 20px;
+    border-style: none;
+    border-color: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+}
+.nav_button li a{
+    color: white;
+    font-style: none;
+    font-weight: 500; 
+    text-decoration: none; 
+}
+
+.nav_button .bt1,.bt2,.bt3,.bt4{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    gap: 10px;
+
 }
 
 
