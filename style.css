@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    /* =====colors===== */
+    --body-color: #F0F2F5;
+    --sidebar-color1: #4F4F4F;
+    --sidebar-color2: #2b2b2b;
+    --selection-color: #6b6b6b;
+    --tap-color: #005ED0;
+}
+
+
+/*
+ =========font family=========
+.roboto-<uniquifier> {
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+*/
+
+body{
+    height: 100vh;
+    background-color: var(--body-color);
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+.sidebar .head_logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+.sidebar{
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    bottom: 30px;
+    /* height: 100%; */
+    width: 225px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background-image: linear-gradient(25deg,#2b2b2b 80% ,#4F4F4F );
+}
+
+.sidebar .img-text img {
+    height: 63px;
+    width: auto;
+}
+
+.sidebar.img-text {
+    display: flex;
+    align-items: center;
+}
+
+.header_title {
+    color: white;
+    font-size: 20px;
+}
+
+
+
