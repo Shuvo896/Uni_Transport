@@ -9,19 +9,6 @@
     --tap-color: #005ED0;
 }
 
-
-/*
- =========font family=========
-.roboto-<uniquifier> {
-    font-family: "Roboto", serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
-  }
-*/
-
 body{
     height: 100vh;
     background-color: var(--body-color);
@@ -29,14 +16,15 @@ body{
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    
 }
+
 .sidebar .head_logo {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2px;
 }
+
 .sidebar{
     position: fixed;
     top: 15px;
@@ -47,19 +35,22 @@ body{
     border-radius: 10px;
     background-image: 
     linear-gradient(20deg,rgb(32, 32, 37) 30% ,rgb(62, 62, 71) );
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-250px); /* Hide initially for mobile */
+    /* z-index: 100; */
 }
-
+.sidebar.active {
+    transform: translateX(0); /* Show sidebar when active */
+}
 .sidebar .img-text img {
     height: 63px;
     width: auto;
     padding-top: 20px;
 }
-
 .sidebar.img-text {
     display: flex;
     align-items: center;
 }
-
 .header_title {
     color: white;
     font-size: 20px;
@@ -77,19 +68,22 @@ body{
     align-items: flex-start;
     gap: 5px;
 }
+
 .nav_button li a{
     color: white;
     font-style: none;
     font-weight: 500; 
-    text-decoration: none; 
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
 }
 
 .nav_button .bt1 {
+
     width: 225px;
     border-radius: 7px;
     background-image: 
     linear-gradient(5deg, rgb(45, 131, 236) 60% ,rgb(82, 171, 255));
-    
+    /* background: linear-gradient(5deg, rgb(45, 131, 236) 60%, rgb(82, 171, 255)); */
 }
 
 .nav_button .bt1,
@@ -115,6 +109,54 @@ body{
     background-color: #c9c9c949;
 }
 
+/* Hamburger icon */
+.hamburger {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
 
+.hamburger .bar {
+    width: 30px;
+    height: 4px;
+    background-color: rgb(129, 129, 129);
+    transition: all 0.3s ease;
+}
 
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 8px;
+}
 
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -8px;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-120%); /* Hide sidebar initially */
+    }
+    .hamburger {
+        display: flex;
+    }
+}
+
+@media (min-width: 769px) {
+    .sidebar {
+        transform: translateX(0); /* Always show sidebar on larger screens */
+    }
+    .hamburger {
+        display: none;
+    }
+}
